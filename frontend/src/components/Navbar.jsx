@@ -49,7 +49,7 @@ const Navbar = () => {
 
       </div>
 
-      <div className={`absolute top-0 right-0 bottom-0 bg-white md:hidden ${visible ? 'w-full' : 'w-0'} transition-all `}>
+      <div className={`absolute overflow-hidden top-0 right-0 bottom-0 bg-white md:hidden ${visible ? 'w-full' : 'w-0'} transition-all `}>
         <div className='flex flex-col'>
           <div className='flex px-4 py-6' onClick={() => setVisible(false)}>
             <img src={assets.dropdown_icon} alt="" className='w-2 rotate-180 mr-3' />
