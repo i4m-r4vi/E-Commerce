@@ -37,6 +37,22 @@ const Collection = () => {
     setFilterProducts(productCopy)  
   }
 
+  const sortProduct = (e)=>{
+    let sortedProduct = filterProducts.slice();
+    let choice = e.target.value;
+    switch (choice) {
+      case 'low-high':
+        setFilterProducts(sortedProduct.sort((a,b)=>a.price-b.price))
+        break;
+      case 'high-low':
+        setFilterProducts(sortedProduct.sort((a,b)=>b.price-a.price))
+        break;
+      default:
+        setFilterProducts(products);
+        break;
+    }
+  }
+
   useEffect(() => {
     setFilterProducts(products)
   }, [])
@@ -87,8 +103,8 @@ const Collection = () => {
         <div className='flex justify-between  text-base sm:text-2xl  px-2'>
           <Title text1={'ALL'} text2={'COLLECTIONS'} />
           {/* Products Sort */}
-          <select className='border-2 border-gray-200 text-sm px-2'>
-            <option value="Relavent">Sort by: Relavent</option>
+          <select className='border-2 border-gray-200 text-sm px-2' onChange={sortProduct}>
+            <option value="Relavent" >Sort by: Relavent</option>
             <option value="low-high">low-high</option>
             <option value="high-low">high-low</option>
           </select>
