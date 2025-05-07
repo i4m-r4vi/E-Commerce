@@ -20,7 +20,7 @@ const Search = () => {
 
     return showSearch && visible?(
         <div className='border-t border-b p-4 bg-gray-50 text-center'>
-            <div className='inline-flex items-center justify-center border rounded-full border-gray-400 px-5 py-2 w-1/2'>
+            <div className='inline-flex items-center justify-center border rounded-full border-gray-400 px-5 py-2 md:w-1/2'>
                 <input type="text" value={search} onChange={(e)=>setSearch(e.target.value)} className='flex-1 outline-none bg-inherit text-sm' placeholder='Search' />
                 <img src={assets.search_icon} alt="search_icon" className='w-4'/>
             </div>
